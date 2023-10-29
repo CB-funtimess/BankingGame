@@ -1,0 +1,47 @@
+<!-- Created 29/10/2023 -->
+<!-- Login page of Bank of Cupcake -->
+<!-- Logo, Name, Login Section -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<title>Login details | Bank of Cupcake</title>
+
+</head>
+
+<body>
+	<div>
+	<left>
+		<!--https://www.rawpixel.com/image/6550209/psd-sticker-black-illustration-->
+		<img src="cupcake.png" alt="Bank of Cupcake" align="middle">
+		<h1>Bank of Cupcake</h1>
+		<a href="/"><button>Back</button></a>
+	</left>
+	</div>
+
+	<main>
+		<h2>Log in to Online Banking</h2>
+
+		<form action="main.html">
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname" value=""><br><br>
+
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname" value=""><br><br>
+
+			<label for="accountID" title="Your account number is 8 digits long.">Account number:</label><br>
+			<input type="text" id="accountID" name="accountID" value=""><br><br>
+
+			<label for="password">Password:</label><br>
+			<input type="password" id="password" name="password" value=""><br><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+
+	</main>
+</body>
+</html>
