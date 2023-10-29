@@ -1,6 +1,6 @@
-<!-- Created 28/10/2023 -->
-<!-- Main page of Bank of Cupcake -->
-<!-- Logo, Name, Tansfer, Customer Service -->
+<!-- Created 29/10/2023 -->
+<!-- Thank you page (enquiry) of Bank of Cupcake -->
+<!-- Logo, Name -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
-	<title>Account | Bank of Cupcake</title>
+	<title>Payment Received | Bank of Cupcake</title>
 
 </head>
 
@@ -19,19 +19,12 @@
 		<!--https://www.rawpixel.com/image/6550209/psd-sticker-black-illustration-->
 		<img src="{{ url_for('static', filename= 'images/cupcake.png')}}" alt="Bank of Cupcake" align="middle">
 		<h1>Bank of Cupcake</h1>
-		<a href="/"><button>Log Out</button></a> <!--Needs to end session-->
+		<a href="main.html"><button>Main</button></a>
 	</left>
 	</div>
 
-	<aside>
-		<a href="/main/atm/"><button>Pay & Tansfer</button></a><br>
-		<a href="/main/help/" title="Contact Us"><button>Help Centre</button></a>
-	</aside>
-
 	<main>
-		<h2>My Accounts Overview</h2>
-		<h3>Current/Savings/Deposits/Investment Account</h3>
-		<p>Current Balance</p>
+		<h2>Your transaction has been accepted for processing. Crediting time may vary.</h2>
 	</main>
 </body>
 </html>

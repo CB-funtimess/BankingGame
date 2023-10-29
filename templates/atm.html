@@ -8,7 +8,7 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
 	<title>Pay & Tansfer | Bank of Cupcake</title>
 
 </head>
@@ -17,9 +17,9 @@
 	<div>
 	<left>
 		<!--https://www.rawpixel.com/image/6550209/psd-sticker-black-illustration-->
-		<img src="cupcake.jpeg" alt="Bank of Cupcake" align="middle">
+		<img src="{{ url_for('static', filename= 'images/cupcake.png')}}" alt="Bank of Cupcake" align="middle">
 		<h1>Bank of Cupcake</h1>
-		<a href="main.html"><button>Back</button></a>
+		<a href="/main"><button>Back</button></a>
 	</left>
 	</div>
 
@@ -27,7 +27,7 @@
 		<h2>Transfer money</h2>
 
 		<!-- When click submit, the form data will be sent to a page called "/action_page.php" -->
-		<form action="main.html">
+		<form action="ty_t.html">
 			<label for="re_accountID" title="Account number is 8 digits long.">Recipient's Account Number:</label><br>
 			<input type="text" id="re_accountID" name="re_accountID" value=""><br><br>
 
@@ -41,7 +41,7 @@
 			<input type="date" id="date" name="date" value=""><br><br>
 
 			<label for="other">Enter Other Payment Details/Recipient Reference:</label><br>
-			<input type="text" id="other" name="other" value=""><br><br>
+			<input type="text" id="other" name="other" value=""><br><br><br>
 
 			<input type="submit" value="Submit">
 		</form>

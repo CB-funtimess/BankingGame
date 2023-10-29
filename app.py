@@ -1,9 +1,10 @@
 from functools import wraps
-from flask import Flask, Response, render_template, session
+from flask import Flask, Response, redirect, render_template, request, session, url_for
 import requests
 import a
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "iuyofhowburkjlseirufyUJ98IUAHG3F83LAYUGAIELKRV.JAIUO"
 
 def require_api_token(func):
     @wraps(func)
@@ -22,36 +23,35 @@ def require_api_token(func):
 def home():
     return render_template('home.html')
 
-@app.route("/login/")
+@app.route("/login/", methods=("GET", "POST"))
 def login():
+    if request.method == "POST":
+        id = request.form.get('accountID')
+        firstname = request.form.get('fname')
+        login_credentials(id)
+        return redirect('/main')
     return render_template('login.html')
 
-def login_credentials(username, password):
-    # Login when credentials are correct
-    payload = {"User": username, "Password": password}
-    login = False
-    id = 0 # set ID
-    # Match 
-    
-    # Create access token
-    if login:
-        "https://stackoverflow.com/questions/32510290/how-do-you-implement-token-authentication-in-flask"
-        response = a.getSpecificAccount(id)
-        token = response["user"]["authentication-token"]
+def login_credentials(id):
+    response = a.getSpecificAccount(id)
+    if response != None:
+        #token = response["user"]["authentication-token"]
+        token = "jlhdfalskfdasikjdhbalijrgnaeilkhaj;ougilkjhaoghag"
         
         session['api_session_token'] = token
         session['user_id'] = id
         
+@app.route("/main")
+@require_api_token
+def main():
+    return render_template('main.html')
+
 
 @app.route("/main/atm/")
 @require_api_token
 def atm():
     return render_template('atm.html')
 
-@app.route("/main")
-@require_api_token
-def main():
-    return render_template('main.html')
 
 @app.route("/main/help")
 @require_api_token
@@ -60,3 +60,4 @@ def enquiries():
 
 def render_enquiry_form():
     return render_template('enquiry.html')
+    

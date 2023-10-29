@@ -1,3 +1,56 @@
-<!-- Created 28/10/2023 -->
+<!-- Created 29/10/2023 -->
 <!-- Enquiry Form of Bank of Cupcake -->
 <!-- Logo, Name, Details -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<title>Enquiry | Bank of Cupcake</title>
+</head>
+
+<body>
+<div>
+	<left>
+		<!--https://www.rawpixel.com/image/6550209/psd-sticker-black-illustration-->
+		<img src="{{ url_for('static', filename= 'images/cupcake.png')}}" alt="Bank of Cupcake" align="middle">
+		<h1>Bank of Cupcake</h1>
+		<a href="main.html"><button>Main</button></a>
+	</left>
+	</div>
+
+	<aside>
+		<a href="hc.html"><button>Help Centre</button></a><br>
+	</aside>
+
+	<main>
+		<h2>Enquiry Form</h2>
+
+		<!-- When click submit, the form data will be sent to a page called "/action_page.php" -->
+		<form action="ty_e.html">
+			<label for="enquiry">My enquiry is regarding:</label><br>
+			<input type="text" id="enquiry" name="enquiry" value=""><br><br>
+
+			<label for="document" title="Supporting Documents">Details of my enquiry (image or file to support your question):</label><br>
+			<input type="file" accept="image/jpeg,image/jpg,image/png,image/gif,application/pdf" id="document" name="document" value=""><br><br>
+
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname" value=""><br><br>
+
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname" value=""><br><br>
+
+			<label for="number">Contact number:</label><br>
+			<input type="text" id="number" name="number" value=""><br><br>
+
+			<label for="email">Email:</label><br>
+			<input type="text" id="email" name="email" value=""><br><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+
+	</main>
+</body>
+</html>
